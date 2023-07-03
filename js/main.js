@@ -133,7 +133,8 @@ for(var i = 0; i < links.length; i++) {
   })
 
 }
-
+// Quando adicionado o produto, dar scroll para o carrinho abaixo;
+// Calcular o total de todos os produtos;
 // Forma de pagamento - verificar como usar o link do pagueseguro.
 
 
