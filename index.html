@@ -7,11 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style/bootstrap.css"></link>
     <link rel="stylesheet" type="text/css" href="style/style.css"></link>
     <link rel="stylesheet" type="text/css" href="style/common.css"></link>
-
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="js/main.js"></script>
-
 </head>
 <body>
     <header>
@@ -19,102 +15,70 @@
             <ul class="flex">
                 <li><a class="heading-18" href="#">Home</a></li>
                 <li><a class="heading-18" href="#">Quem Somos</a></li>
-                <li><a href="#"></a><img src="images/logotipo.png" alt></li>
+                <li><a href="#"></a><img src="images/logo.png" alt></li>
                 <li><a class="heading-18" href="#">Sobre</a></li>
                 <li><a class="heading-18" href="#">Contato</a></li>
             </ul>
         </div>
     </header>
 
+    <div class="container banner"></div>
+
     <section class="body">
         <div class="container">
-            <h1 class="heading-24 w-700">Escolha seus produtos:</h1>
+            <h1 class="heading-24 w-700 color-gold">Escolha seus produtos</h1>
 
-            <div class="box">
-                <div class="card-produto">
-                    <img id="image" src="images/produto-1.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
-                    </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
-                <div class="card-produto">
-                    <img id="image" src="images/produto-2.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
-                    </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
-                <div class="card-produto">
-                    <img id="image" src="images/produto-3.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
-                    </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
-                <div class="card-produto">
-                    <img id="image" src="images/produto-4.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
-                    </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
+            <div class="box" id="products"></div>
 
-                <div class="card-produto">
-                    <img id="image" src="images/produto-5.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
-                    </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
+            
+                <section class="cart-section section-b-space hide-bag">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="cart_counter">
+                                    <div class="heading-16">
+                                        Sua compra expira em <span id="timer">10:00</span> minutos!
+                                    </div>
+                                    <a href="checkout.html" class="btn-default">Comprar agora</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 table-responsive-xs">
+                                <table class="table cart-table">
+                                    <thead>
+                                        <tr class="table-head">
+                                            <th class="color-gold">Imagem</th>
+                                            <th class="color-gold">Nome do produto</th>
+                                            <th class="color-gold">Quantidade</th>
+                                            <th class="color-gold">Preço</th>
+                                            <th class="color-gold">Total</th>
+                                        </tr>
+                                    </thead>
+                                </table>
 
-                <div class="card-produto">
-                    <img id="image" src="images/produto-6.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
+                                <div id="cart"></div>
+                            
+                                <div class="table-responsive-md">
+                                    <table class="table cart-table ">
+                                        <tfoot>
+                                            <tr>
+                                                <td class="heading-18 color-gold">Total:</td>
+                                                <td>
+                                                    <h2 class="heading-24 w-700 color-gold">R$1000,00</h2>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cart-buttons">
+                            <div class="col-6"><a href="#" class="btn-default">Continue comprando</a></div>
+                            <div class="col-6"><a href="#" class="btn-default">Compre Agora</a></div>
+                        </div>
                     </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
-                <div class="card-produto">
-                    <img id="image" src="images/produto-7.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
-                    </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
-                <div class="card-produto">
-                    <img id="image" src="images/produto-8.png" alt>
-                    <div>
-                        <h3 id="product" class="heading-16">Semijoia Banhada com Micro Zircônia</h3>
-                    </div>
-                    <div>
-                        <h3 id="price" class="heading-18 w-700">R$ 100,00</h3>
-                    </div>
-                    <button class="btn heading-20 w-700"><a href="checkout.html">Comprar Agora</a></button>
-                </div>
+                </section>
             </div>
-        </div>
+       
     </section>
 
     <footer>
@@ -123,5 +87,6 @@
 
 
     
+    <script src="js/main.js"></script>
 </body>
 </html>
