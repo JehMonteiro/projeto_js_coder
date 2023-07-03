@@ -133,8 +133,13 @@ for(var i = 0; i < links.length; i++) {
   })
 
 }
+
+
+// O que ainda falta:
+
 // Quando adicionado o produto, dar scroll para o carrinho abaixo;
 // Calcular o total de todos os produtos;
-// Forma de pagamento - verificar como usar o link do pagueseguro.
-
+// Forma de pagamento - verificar como usar o link do pagueseguro;
+// Fazer o footer (colocar logotipo);
+// Colocar os links do header.
 
