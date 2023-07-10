@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto de Javascript - Coder</title>
-    <link rel="stylesheet" type="text/css" href="style/bootstrap.css"></link>
-    <link rel="stylesheet" type="text/css" href="style/style.css"></link>
-    <link rel="stylesheet" type="text/css" href="style/common.css"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/bootstrap.css">
+    </link>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    </link>
+    <link rel="stylesheet" type="text/css" href="style/common.css">
+    </link>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -30,63 +36,81 @@
 
             <div class="box" id="products"></div>
 
-            
-                <section class="cart-section section-b-space hide-bag">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="cart_counter">
-                                    <div class="heading-16">
-                                        Sua compra expira em <span id="timer">10:00</span> minutos!
-                                    </div>
-                                    <a href="checkout.html" class="btn-default">Comprar agora</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 table-responsive-xs">
-                                <table class="table cart-table">
-                                    <thead>
-                                        <tr class="table-head">
-                                            <th class="color-gold">Imagem</th>
-                                            <th class="color-gold">Nome do produto</th>
-                                            <th class="color-gold">Quantidade</th>
-                                            <th class="color-gold">Preço</th>
-                                            <th class="color-gold">Total</th>
-                                        </tr>
-                                    </thead>
-                                </table>
 
-                                <div id="cart"></div>
-                            
-                                <div class="table-responsive-md">
-                                    <table class="table cart-table ">
-                                        <tfoot>
-                                            <tr>
-                                                <td class="heading-18 color-gold">Total:</td>
-                                                <td>
-                                                    <h2 class="heading-24 w-700 color-gold">R$1000,00</h2>
-                                                </td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+            <section class="cart-section section-b-space hide-bag">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="cart_counter">
+                                <div class="heading-16">
+                                    Sua compra expira em <span id="timer">10:00</span> minutos!
                                 </div>
+                                <a href="checkout.html" class="btn-default">Comprar agora</a>
                             </div>
                         </div>
-                        <div class="row cart-buttons">
-                            <div class="col-6"><a href="#" class="btn-default">Continue comprando</a></div>
-                            <div class="col-6"><a href="#" class="btn-default">Compre Agora</a></div>
+                        <div class="col-lg-12 table-responsive-xs">
+                            <table class="table cart-table">
+                                <thead>
+                                    <tr class="table-head">
+                                        <th class="color-gold">Imagem</th>
+                                        <th class="color-gold">Nome do produto</th>
+                                        <th class="color-gold">Quantidade</th>
+                                        <th class="color-gold">Preço</th>
+                                        <th class="color-gold">Total</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+                            <div id="cart"></div>
+
+                            <div class="table-responsive-md">
+                                <table class="table cart-table ">
+                                    <tfoot>
+                                        <tr>
+                                            <td class="heading-18 color-gold">Total:</td>
+                                            <td>
+                                                <h2 class="heading-24 w-700 color-gold">R$1000,00</h2>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </section>
-            </div>
-       
+                    <div class="row cart-buttons">
+                        <div class="col-6"><a href="#" class="btn-default">Continue comprando</a></div>
+                        <div class="col-6"><a href="#" class="btn-default">Compre Agora</a></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </section>
 
     <footer>
+        <div class="colfooter">
+            <h4 class="titleFooter">Contato</h4>
+            <p><i class="icon icon-mail"></i> contato@lamouracessorios.com.br</p>
+            <p><i class="icon icon-phone"></i> 21 90000-0000</p>
+            <p><i class="icon icon-whatsapp"></i> 21 90000-0000</p>
+        </div>
 
+        <div class="colfooter">
+            <h4 class="titleFooter">Redes Sociais</h4>
+            <a href="#" class="botao"><span><i class="icon icon-facebook"></i></span></a>
+            <a href="#" class="botao"><span><i class="icon icon-instagram"></i></span></a>
+            <a href="#" class="botao"><span><i class="icon icon-twitter"></i></span></a>
+            <a href="#" class="botao"><span><i class="icon icon-pinterest"></i></span></a>
+        </div>
+        <div class="logo-container">
+            <img class="logo" src="images/logo2.png" alt="Logotipo da loja">
+        </div>
+        <div class="footer-text">
+            © 2023 Minha Loja de Semijoias. Todos os direitos reservados.
+        </div>
     </footer>
 
-
-    
     <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -84,6 +84,8 @@ function atualizarCarrinho() {
   containerCarrinho.innerHTML= " ";
   items.map((val) => {
     if(val.quantidade > 0) {
+      var total = parseFloat(val.price) * val.quantidade;
+
     containerCarrinho.innerHTML += 
     
     `
@@ -91,22 +93,22 @@ function atualizarCarrinho() {
         <tbody>
             <tr>
                 <td>
-                    <img width="100" src="`+val.img+`" alt>
+                    <img width="100" src="${val.img}" alt>
                 </td>
-                <td><h3 class="heading-16" href="#">`+val.title+`</h3>
+                <td><h3 class="heading-16" href="#">${val.title}</h3>
                     <div class="mobile-cart-content">
                         <div class="col">
                             <div class="qty-box">
-                                <h2 class="heading-16">`+val.quantidade+`</h2>
+                                <h2 class="heading-16">${val.quantidade}</h2>
                             </div>
                         </div>
                     </div>
                 </td>
                 <td>
-                    <h2 class="heading-16 w-700">R$ `+val.price+`</h2>
+                    <h2 class="heading-16 w-700">R$ ${parseFloat(val.price).toFixed(2)}</h2>
                 </td>
                 <td>
-                    <h2 id="total"class="heading-16 w-700">R$ `+val.price+`</h2>
+                    <h2 id="total"class="heading-16 w-700">R$ ${total.toFixed(2)}</h2>
                 </td>
             </tr>
         </tbody>
@@ -120,25 +122,28 @@ function atualizarCarrinho() {
 var links = document.getElementsByTagName('a');
 
 for(var i = 0; i < links.length; i++) {
-  links[i].addEventListener("click", function() {
+  links[i].addEventListener("click", function(event) {
     event.preventDefault();
 
     let key = this.getAttribute('key');
     items[key].quantidade++;
     atualizarCarrinho();
 
+    var containerCarrinho = document.getElementById("cart");
+    containerCarrinho.scrollIntoView({ behavior: 'smooth'});
+
     // Atualizar o valor;
     //Colocar o valor em reais 50,00 (transformar em number na soma);
 
-  })
+  });
 
 }
 
 
 // O que ainda falta:
 
-// Quando adicionado o produto, dar scroll para o carrinho abaixo;
-// Calcular o total de todos os produtos;
+// Quando adicionado o produto, dar scroll para o carrinho abaixo; - Feito
+// Calcular o total de todos os produtos; - Feito
 // Forma de pagamento - verificar como usar o link do pagueseguro;
 // Guardar os dados da compra no localStorage;
 // Fazer o footer (colocar logotipo);
