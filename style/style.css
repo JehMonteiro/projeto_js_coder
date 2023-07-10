@@ -418,34 +418,55 @@ a:hover {
   max-height: 100px;
 }
 
-/* Estilos para o texto do footer */
-.footer-text {
-  font-size: 14px;
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 125%;
+  text-align: center;
+  padding: 30px;
+  background-color: #ddbfbf;
 }
 
-/* Estilos para as colunas do footer */
-.colfooter {
-  display: inline-block;
-  vertical-align: top;
-  margin: 10px;
+.col-footer , .social-links{
+  text-align: left;
+  align-items: center;
+  list-style: none;
+  line-height: 1.5;
+  gap: 30px;
+}
+.col-footer h3 , .social-links h3 {
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 800;
+  position: relative;
+  line-height: 1.5;
 }
 
-/* Estilos para os títulos das colunas do footer */
-.titleFooter {
-  font-size: 16px;
-  margin-bottom: 10px;
+.col-footer .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: #ffffff;
+	transition: all 0.5s ease;
+
 }
 
-/* Estilos para os ícones */
-.icon {
-  margin-right: 5px;
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
-/* Estilos para os botões de redes sociais */
-.botao {
-  display: inline-block;
-  margin-right: 10px;
-  padding: 5px;
-  background-color: #ccc;
-  color: #fff;
+.social-links a:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.2);
 }
