@@ -310,16 +310,6 @@ span.black-100 {
   background-color: var(--btn-color);
 }
 
-.open {
-  display: block;
-  right: 0;
-  z-index: 99999;
-
-  width: 100vw;
-  height: 100vw;
-  background-color: rgba(0, 0, 0, 0.589);
-}
-
 .input-default,
 select.input-default.form-select {
   box-sizing: border-box;
@@ -886,11 +876,6 @@ div.info-card-header-action {
 
 /*Estilos compartilhados por mobile e tablet*/
 @media screen and (max-width: 1199px) {
-  .card-produto {
-    width: 100%;
-    min-width: 162px;
-    border-radius: 11px;
-  }
 
   .product-image-featured,
   .product-image-secondary {

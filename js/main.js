@@ -133,8 +133,7 @@ function atualizarCarrinho() {
 
 function atualizarTotalFinal() {
   var containerTotalFinal = document.getElementById("total");
-    containerTotalFinal.innerHTML += 
-    `
+  containerTotalFinal.innerHTML += `
       <div class="table-responsive-md">
           <table class="table cart-table ">
               <tfoot>
@@ -148,9 +147,7 @@ function atualizarTotalFinal() {
           </table>
       </div>
     `;
-  ;
 }
-
 
 var links = document.getElementsByTagName("a");
 
@@ -165,22 +162,31 @@ for (var i = 0; i < links.length; i++) {
     var containerCarrinho = document.getElementById("cart");
     containerCarrinho.scrollIntoView({ behavior: "smooth" });
 
-    
     //Colocar o valor em reais 50,00 (transformar em number na soma);
   });
 }
 
+function searchProduct() {
+  const busca = document.getElementById("busca").value;
 
+  // Usa o método find para buscar o objeto que tem o nome igual ao valor do input
+  // const resultado = items.find((title) => title.name === busca);
+
+  // console.log(resultado);
+
+
+  //Ou usando o forEach
+  //undefined
+  items.forEach(function (items) {
+    console.log(items.length);
+  });
+
+  
+}
 
 // O que ainda falta:
 
-
-
-// Quando adicionado o produto, dar scroll para o carrinho abaixo; - Feito Karol
-// Calcular o total de todos os produtos; - Feito Karol
-// Terminar o tatalFinal() - Jéssica começou
+// Terminar o tatalFinal() - Falta terminar, não está funcionando
 // Ter a opção de excluir os produtos do carrinho;
-// Forma de pagamento - verificar como usar o link do pagueseguro;
+// Incluir campo de busca e filtrar dentro do array de procutos e mostrar o resultado; - Gabriel / Jéssica
 // Guardar os dados da compra no localStorage;
-// Fazer o footer (colocar logotipo);
-// Colocar os links do header.
