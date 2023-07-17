@@ -57,18 +57,19 @@ const items = [
   },
 ];
 
+
 function inicializarLoja() {
   var containerProdutos = document.getElementById("products");
   items.map((val) => {
     containerProdutos.innerHTML +=
       `
     
-    <div class="card-produto">
+    <div class="card-produto id="card">
       <img src="` +
       val.img +
       `" alt>
         <div>
-          <h3 class="heading-16">` +
+          <h3 class="heading-16" id="card-title">` +
       val.title +
       `</h3>
         </div>
@@ -102,7 +103,8 @@ function atualizarCarrinho() {
                 <td>
                     <img width="100" src="${val.img}" alt>
                 </td>
-                <td><h3 class="heading-16" href="#">${val.title}</h3>
+                <td><h3 class="heading-16"
+                 href="#">${val.title}</h3>
                     <div class="mobile-cart-content">
                         <div class="col">
                             <div class="qty-box">
@@ -133,8 +135,7 @@ function atualizarCarrinho() {
 
 function atualizarTotalFinal() {
   var containerTotalFinal = document.getElementById("total");
-    containerTotalFinal.innerHTML += 
-    `
+  containerTotalFinal.innerHTML += `
       <div class="table-responsive-md">
           <table class="table cart-table ">
               <tfoot>
@@ -148,9 +149,7 @@ function atualizarTotalFinal() {
           </table>
       </div>
     `;
-  ;
 }
-
 
 var links = document.getElementsByTagName("a");
 
@@ -165,22 +164,42 @@ for (var i = 0; i < links.length; i++) {
     var containerCarrinho = document.getElementById("cart");
     containerCarrinho.scrollIntoView({ behavior: "smooth" });
 
-    
     //Colocar o valor em reais 50,00 (transformar em number na soma);
   });
 }
 
+//Função para filtrar/////////////////////////////////////////////////////////////////
+const cards = document.getElementsByClassName('card-produto');
 
+const filterElement = document.getElementById('input-filter');
+
+filterElement.addEventListener('input', filtrar);
+
+function filtrar() {
+  const filterText = filterElement.value.toLowerCase();
+  if (filterText !== '') {
+    for (let card of cards) {
+      const title = card.querySelector('.heading-16');
+      const cardTitle = title.textContent.toLowerCase();
+
+      if (!cardTitle.includes(filterText)) {
+        card.style.display = 'none';
+      } else {
+        card.style.display = 'block';
+      }
+    }
+  } else {
+    for (let card of cards) {
+      card.style.display = 'block';
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
 
 // O que ainda falta:
 
-
-
-// Quando adicionado o produto, dar scroll para o carrinho abaixo; - Feito Karol
-// Calcular o total de todos os produtos; - Feito Karol
-// Terminar o tatalFinal() - Jéssica começou
+// Terminar o tatalFinal() - Falta terminar, não está funcionando
 // Ter a opção de excluir os produtos do carrinho;
-// Forma de pagamento - verificar como usar o link do pagueseguro;
+// Incluir campo de busca e filtrar dentro do array de procutos e mostrar o resultado; - Gabriel / Jéssica
 // Guardar os dados da compra no localStorage;
-// Fazer o footer (colocar logotipo);
-// Colocar os links do header.

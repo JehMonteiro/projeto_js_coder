@@ -9,31 +9,45 @@
     <link rel="stylesheet" type="text/css" href="style/common.css"></link>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<body id="blur">
+
     <header>
         <div class="container">
-            <ul class="flex">
-                <li><a class="heading-18" href="#">Home</a></li>
-                <li><a class="heading-18" href="#">Quem Somos</a></li>
-                <li><a href="#"></a><img src="images/logo.png" alt></li>
-                <li><a class="heading-18" href="#">Sobre</a></li>
-                <li><a class="heading-18" href="#">Contato</a></li>
-            </ul>
+            <nav>
+                <ul class="flex">
+                    <li><a class="desk heading-18" href="~">Home</a></li>
+                    <li><a class="desk heading-18" href="#">Quem Somos</a></li>
+                    <li class="img"><a href="~"><img src="images/logo.png" alt></a></li>
+                    <li><a class="desk heading-18" href="#">Produtos</a></li>
+                    <li><a class="desk heading-18" href="#">Contato</a></li>
+                    <div class="mobile-menu-icon">
+                        <button onclick="menuShow()">
+                            <img class="icon" src="images/menu.svg" alt>
+                        </button>
+                    </div>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <nav>
+                    <ul class="flex">
+                        <li><a class="heading-18" href="">Home</a></li>
+                        <li><a class="heading-18" href="">Quem Somos</a></li>
+                        <li><a class="heading-18" href="">Produtos</a></li>
+                        <li><a class="heading-18" href="">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-
+     
     <div class="container banner"></div>
-
+     
     <section class="body">
         <div class="container">
             <h1 class="heading-24 w-700 color-gold">Escolha seus produtos</h1>
             <div class="search-bar">
-                <div>
-                    <input type="text" class="search-text" placeholder="Pesquisar produtos">
-                    <button onclick="searchProduct()">
-                        <img class="search-button" src="/images/lupa.png" alt="" width="30px" height="30px">
-                    </button>
-                </div>
+                    <input type="text"  id="input-filter" placeholder="Pesquisar produtos" onkeyup="(filtrar())">
             </div>
             <div class="box" id="products"></div>
                 <section class="cart-section section-b-space hide-bag">
@@ -67,43 +81,71 @@
                         </div>
                         <div class="row cart-buttons">
                             <div class="col-6"><a href="#" class="btn-default">Continue comprando</a></div>
-                            <div class="col-6"><a href="#" class="btn-default">Compre Agora</a></div>
+                            <div class="col-6"><button onclick="clear()" class="btn-default">Esvaziar Carrinho</button></div>
+                            <div class="col-6"><button onclick="toggle()" class="btn-default">Compre Agora</button></div>
                         </div>
                     </div>
                 </section>
             </div>
-       
     </section>
+     
+    
+     
+    <footer class="footer container col-lg-12">
+        <div class="col-lg-2">
+            <img src="./images/logo.png" alt="logo" width="150" height="150">
+        </div>
+        <div class="col-footer col-lg-3">
+            <h3 class="heading-24 w-700 color-gold">Contato</h3>
+            <ul>
+                <li>CNPJ : 12.345.678/0001-90</li>
+                <li>Rua Imaginária, 1234, Bairro dos Sonhos, Cidade Fantasia, Estado Mágico, CEP: 12345-678, Brasil.</li>
+            </ul>
+        </div>
+        <div class="col-footer col-lg-3"">
+            <h3 class="heading-24 w-700 color-gold">Nossas redes socias</h3>
+            <div class="social-links">
+                <a href="#"><img src="./images/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="./images/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="./images/whatsapp-icon.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+        <div class="col-footer links col-lg-3"">
+            <h3 class="heading-24 w-700 color-gold">Atendimento</h3>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Trocas e devoluçoes</a></li>
+                <li><a href="#">Garantia</a></li></li>
+        </div>
+    </footer>
+ 
 
-        <footer class="footer">
-            <div>
-                <img src="./images/logo.png" alt="logo" width="150" height="150">
-            </div>
-            <div class="col-footer">
-                <h3>Contato</h3>
-                <ul>
-                    <li>CNPJ : 12.345.678/0001-90</li>
-                    <li>Rua Imaginária, 1234, Bairro dos Sonhos, Cidade Fantasia, Estado Mágico, CEP: 12345-678, Brasil.</li>
-                </ul>
-            </div>
-            <div class="col-footer">
-                <h3>Nossas redes socias</h3>
-                <div class="social-links">
-                    <a href="#"><img src="./images/facebook-icon.png" alt="Facebook"></a>
-                    <a href="#"><img src="./images/instagram-icon.png" alt="Instagram"></a>
-                    <a href="#"><img src="./images/whatsapp-icon.png" alt="Whatsapp"></a>
-                </div>
-            </div>
-            <div class="col-footer">
-                <h3>Atendimento</h3>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Trocas e devoluçoes</a></li>
-                    <li><a href="#">Garantia</a></li></li>
-            </div>
-        </footer>
-
-
+    <div id="pop-up">
+        <h2 class="heading-24 w-700 color-gold">Sua compra foi efetuada com sucesso!</h2>
+        <button onclick="toggle()" class="btn-default">Fechar</button>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
 </html>
+
+<script>
+    // Menu hamburguer mobile
+    function menuShow() {
+        let menuMobile = document.querySelector('.mobile-menu');
+        if (menuMobile.classList.contains('open')) {
+            menuMobile.classList.remove('open');
+            document.querySelector('.icon').src = `${request.u}/images/menu.svg`;
+        } else {
+            menuMobile.classList.add('open');
+            document.querySelector('.icon').src = `${request.u}/images/close.svg`;
+        }
+    }
+
+    // Pop-up finalização de compra
+    function toggle() {
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('pop-up');
+        popup.classList.toggle('active');
+    }
+</script>
