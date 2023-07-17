@@ -193,6 +193,7 @@ span.black-100 {
   --color-black: #000000;
   --color-gray: #f5f5f5;
   --color-dark-grey: #545a57;
+  --color-gold: #947f5e;
 }
 
 .mb-72 {
@@ -324,12 +325,36 @@ select.input-default.form-select {
   margin: 8px 0 32px 0;
 }
 
+.search-bar {
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid var(--color-pink);
+  border-radius: 4px;
+  padding: 5px 10px; 
+  width: 30%;
+  /* margin: 8px 0 32px 0; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-default-pink {
+  border: none;
+  width: 100%;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+}
+
 .input-default:focus {
   border: 1px solid #000000;
 }
 
 .input-default::placeholder {
   color: #545a57;
+}
+
+.input-default-pink::placeholder {
+  color: var(--color-pink);
 }
 
 select.input-default {
