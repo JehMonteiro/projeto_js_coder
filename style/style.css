@@ -788,4 +788,16 @@ img.efeito-3 {
   }
 }
 
+.qty-box {
+  display: flex;
+  align-items: center;
+}
+
+.qty-box button {
+  margin-right: 10px;
+}
+
+.qty-box img {
+  width: 30px;
+}
 

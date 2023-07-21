@@ -92,6 +92,7 @@ inicializarLoja();
 function atualizarCarrinho() {
   var containerCarrinho = document.getElementById("cart");
   containerCarrinho.innerHTML = " ";
+  
   items.map((val) => {
     if (val.quantidade > 0) {
       var total = parseFloat(val.price) * val.quantidade;
@@ -103,12 +104,17 @@ function atualizarCarrinho() {
                 <td>
                     <img width="100" src="${val.img}" alt>
                 </td>
-                <td><h3 class="heading-16"
-                 href="#">${val.title}</h3>
+                <td>
+                <h3 class="heading-16">${val.title}</h3>
                     <div class="mobile-cart-content">
                         <div class="col">
                             <div class="qty-box">
+                            <button onclick="decreaseQuantity(${val.id})">
+                        <img src="images/menos.png" alt="-">
+                      </button>
                                 <h2 class="heading-16">${val.quantidade}</h2>
+                                <button onclick="increaseQuantity(${val.id})">
+                        <img src="images/mais.png" alt="+">
                             </div>
                         </div>
                     </div>
@@ -129,6 +135,29 @@ function atualizarCarrinho() {
     `;
     }
   });
+}
+
+// Função aumentar e dimunir quantidade de itens no carrinho
+function decreaseQuantity(itemID) {
+  
+  var item = items.find((val) => val.id === itemID); 
+
+  if (item) {
+    item.quantidade -= 1;
+
+    atualizarCarrinho();
+  }
+}
+
+function increaseQuantity(itemID) {
+
+  var item = items.find((val) => val.id === itemID);
+  
+  if (item) {
+    item.quantidade += 1;
+
+    atualizarCarrinho();
+  }
 }
 
 // Não está inserindo no html, verificar
