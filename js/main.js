@@ -137,29 +137,6 @@ function atualizarCarrinho() {
   });
 }
 
-// Função aumentar e dimunir quantidade de itens no carrinho
-function decreaseQuantity(itemID) {
-  
-  var item = items.find((val) => val.id === itemID); 
-
-  if (item) {
-    item.quantidade -= 1;
-
-    atualizarCarrinho();
-  }
-}
-
-function increaseQuantity(itemID) {
-
-  var item = items.find((val) => val.id === itemID);
-  
-  if (item) {
-    item.quantidade += 1;
-
-    atualizarCarrinho();
-  }
-}
-
 // Não está inserindo no html, verificar
 
 function atualizarTotalFinal() {
@@ -197,6 +174,40 @@ for (var i = 0; i < links.length; i++) {
   });
 }
 
+// Função aumentar e dimunir quantidade de itens no carrinho
+function decreaseQuantity(itemID) {
+  
+  var item = items.find((val) => val.id === itemID); 
+
+  if (item) {
+    item.quantidade -= 1;
+
+    atualizarCarrinho();
+  }
+}
+
+function increaseQuantity(itemID) {
+
+  var item = items.find((val) => val.id === itemID);
+  
+  if (item) {
+    item.quantidade += 1;
+
+    atualizarCarrinho();
+  }
+}
+
+// Função de esvaziar o carrinho
+
+function esvaziarCarrinho() {
+  items.forEach((item) => {
+    item.quantidade = 0
+  });
+
+  atualizarCarrinho();
+}
+
+
 //Função para filtrar/////////////////////////////////////////////////////////////////
 const cards = document.getElementsByClassName('card-produto');
 
@@ -224,11 +235,12 @@ function filtrar() {
   }
 }
 
+
 //////////////////////////////////////////////////////////////////////////////////////
 
 // O que ainda falta:
 
-// Terminar o tatalFinal() - Falta terminar, não está funcionando
-// Ter a opção de excluir os produtos do carrinho;
+// Terminar o totalFinal() - Falta terminar, não está funcionando
+// Ter a opção de excluir os produtos do carrinho; -Karol
 // Incluir campo de busca e filtrar dentro do array de procutos e mostrar o resultado; - Gabriel / Jéssica
 // Guardar os dados da compra no localStorage;
