@@ -77,9 +77,9 @@
                             </table>
 
                             <div id="cart"></div>
-
-                            <div id="total"></div>
+                            <div id="cart-total" class="heading-24 w-700 color-gold"><span id='totalCarrinho'></span></div>
                         </div>
+                        
                         <div class="row cart-buttons">
                             <div class="col-6"><a href="#" class="btn-default">Continue comprando</a></div>
                             <div class="col-6"><button onclick="clear()" class="btn-default">Esvaziar Carrinho</button></div>
@@ -89,8 +89,6 @@
                 </section>
             </div>
     </section>
-     
-    
      
     <footer class="footer container col-lg-12">
         <div class="col-lg-2">
@@ -118,10 +116,9 @@
                 <li><a href="#">Garantia</a></li></li>
         </div>
     </footer>
- 
 
     <div id="pop-up">
-        <h2 class="heading-24 w-700 color-gold">Sua compra foi efetuada com sucesso!</h2>
+        <h2 class="heading-24 w-700 color-gold">Sua compra, no valor de <span id="totalCarrinho"></span> foi efetuada com sucesso!</h2>
         <button onclick="toggle()" class="btn-default">Fechar</button>
     </div>
 
