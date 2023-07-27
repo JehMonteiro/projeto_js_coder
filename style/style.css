@@ -468,7 +468,8 @@ footer {
 }
 
 /* Barra de pesquisa */
-.input-filter {
+
+.search-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -479,13 +480,7 @@ footer {
   border: #ddbfbf solid 3px;
   padding: 5px;
 }
-.search-text {
-  background: none;
-  border: none;
-  width: 150px;
-  height: auto;
-  font-family: "Poppins";
-}
+
 
 /* Footer */
 .footer {

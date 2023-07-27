@@ -59,7 +59,7 @@ const items = [
 
 
 function inicializarLoja() {
-  var containerProdutos = document.getElementById("products");
+  let containerProdutos = document.getElementById("products");
   items.map((val) => {
     containerProdutos.innerHTML +=
       `
@@ -90,12 +90,12 @@ function inicializarLoja() {
 inicializarLoja();
 
 function atualizarCarrinho() {
-  var containerCarrinho = document.getElementById("cart");
+  let containerCarrinho = document.getElementById("cart");
   containerCarrinho.innerHTML = " ";
   
   items.map((val) => {
     if (val.quantidade > 0) {
-      var total = parseFloat(val.price) * val.quantidade;
+      let total = parseFloat(val.price) * val.quantidade;
 
       containerCarrinho.innerHTML += `
       <div class="cart-box">
@@ -135,31 +135,30 @@ function atualizarCarrinho() {
     `;
     }
   });
+  //Valor toal do carrinho /////////////////////////////////////////////////////////////
+  let totalCarrinho = 0;
+  items.map((val) => {
+    if (val.quantidade > 0) {
+      let total = parseFloat(val.price) * val.quantidade;
+
+  containerCarrinho.innerHTML += `
+        <div class="cart-box">
+          <!-- Conteúdo do item -->
+        </div>
+      `;    
+      totalCarrinho += total;
+    }
+  });
+
+  let spanTotalCarrinho = document.getElementById("totalCarrinho");
+  spanTotalCarrinho.innerHTML = `Total do Carrinho: R$ ${totalCarrinho.toFixed(2)}`;
 }
 
-// Não está inserindo no html, verificar
+/////////////////////////////////////////////////////////////////////////////////
 
-function atualizarTotalFinal() {
-  var containerTotalFinal = document.getElementById("total");
-  containerTotalFinal.innerHTML += `
-      <div class="table-responsive-md">
-          <table class="table cart-table ">
-              <tfoot>
-                  <tr>
-                      <td class="heading-18 color-gold">Total:</td>
-                      <td>
-                          <h2 class="heading-24 w-700 color-gold">R$1000,00</h2>
-                      </td>
-                  </tr>
-              </tfoot>
-          </table>
-      </div>
-    `;
-}
+let links = document.getElementsByTagName("a");
 
-var links = document.getElementsByTagName("a");
-
-for (var i = 0; i < links.length; i++) {
+for (let i = 0; i < links.length; i++) {
   links[i].addEventListener("click", function (event) {
     event.preventDefault();
 
@@ -167,7 +166,7 @@ for (var i = 0; i < links.length; i++) {
     items[key].quantidade++;
     atualizarCarrinho();
 
-    var containerCarrinho = document.getElementById("cart");
+    let containerCarrinho = document.getElementById("cart");
     containerCarrinho.scrollIntoView({ behavior: "smooth" });
 
     //Colocar o valor em reais 50,00 (transformar em number na soma);
@@ -210,7 +209,6 @@ function esvaziarCarrinho() {
 
 //Função para filtrar/////////////////////////////////////////////////////////////////
 const cards = document.getElementsByClassName('card-produto');
-
 const filterElement = document.getElementById('input-filter');
 
 filterElement.addEventListener('input', filtrar);
