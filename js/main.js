@@ -238,7 +238,4 @@ function filtrar() {
 
 // O que ainda falta:
 
-// Terminar o totalFinal() - Falta terminar, não está funcionando
-// Ter a opção de excluir os produtos do carrinho; -Karol
-// Incluir campo de busca e filtrar dentro do array de procutos e mostrar o resultado; - Gabriel / Jéssica
 // Guardar os dados da compra no localStorage;
