@@ -399,6 +399,11 @@ a:hover {
   width: 80px;
 }
 
+#totalCarrinho {
+  justify-content: end;
+  display: flex;
+  margin-top: 30px;
+}
 
 /* Pop-up*/
 
@@ -427,7 +432,7 @@ a:hover {
   width: 600px;
   height: 250px;
   padding: 50px;
-  box-shadow: 10px 10px 800px rgba(0, 0, 0, 2.30);
+  box-shadow: 10px 10px 800px rgba(0, 0, 0, 2.3);
   background-color: #ffffff;
   visibility: hidden;
   opacity: 0;
@@ -435,7 +440,7 @@ a:hover {
 }
 
 #pop-up.active {
- bottom: 0;
+  bottom: 0;
   visibility: visible;
   opacity: 1;
   transform: 0.5s;
@@ -444,7 +449,6 @@ a:hover {
 #pop-up h2 {
   margin-bottom: 50px;
 }
-
 
 /**/
 /* Estilos para o footer */
@@ -480,7 +484,6 @@ footer {
   border: #ddbfbf solid 3px;
   padding: 5px;
 }
-
 
 /* Footer */
 .footer {
@@ -563,7 +566,6 @@ footer {
   }
 }
 
-
 @media (max-width: 768px) {
   .card-produto {
     width: 100%;
@@ -571,7 +573,16 @@ footer {
     border-radius: 11px;
   }
 
-  body > section > div > section > div > div.col-lg-12.table-responsive-xs > table > thead > tr > th:nth-child(1) {
+  body
+    > section
+    > div
+    > section
+    > div
+    > div.col-lg-12.table-responsive-xs
+    > table
+    > thead
+    > tr
+    > th:nth-child(1) {
     display: none;
   }
 
@@ -582,7 +593,7 @@ footer {
   .cart-section .row.cart-buttons {
     flex-direction: column;
     gap: 20px;
-}
+  }
 }
 
 @media (max-width: 425px) {
@@ -754,11 +765,11 @@ img.efeito-3 {
 @media (max-width: 533px) {
   .cart-box h3 {
     width: 30%;
-}
+  }
 
-#cart > div > div > div > div > h2 {
-  margin-left: 50px;
-}
+  #cart > div > div > div > div > h2 {
+    margin-left: 50px;
+  }
 }
 
 @media (max-width: 425px) {
@@ -789,10 +800,9 @@ img.efeito-3 {
 }
 
 .qty-box button {
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .qty-box img {
-  width: 30px;
+  width: 50px;
 }
-
