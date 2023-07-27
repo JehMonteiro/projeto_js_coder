@@ -85,17 +85,19 @@ function inicializarLoja() {
                 
     `;
   });
-}
 
-inicializarLoja();
-
-function atualizarCarrinho() {
-  let containerCarrinho = document.getElementById("cart");
+    const carrinho = JSON.parse(localStorage.getItem("carrinho"))
+    let containerCarrinho = document.getElementById("cart");
   containerCarrinho.innerHTML = " ";
   
-  items.map((val) => {
+  const carrinhoArray = []
+
+  carrinho.map((val) => {
     if (val.quantidade > 0) {
       let total = parseFloat(val.price) * val.quantidade;
+
+      carrinhoArray.push(val)
+      localStorage.setItem("carrinho", JSON.stringify(carrinhoArray))
 
       containerCarrinho.innerHTML += `
       <div class="cart-box">
@@ -135,7 +137,80 @@ function atualizarCarrinho() {
     `;
     }
   });
-  //Valor toal do carrinho /////////////////////////////////////////////////////////////
+  //Valor total do carrinho 
+  let totalCarrinho = 0;
+  items.map((val) => {
+    if (val.quantidade > 0) {
+      let total = parseFloat(val.price) * val.quantidade;
+
+  containerCarrinho.innerHTML += `
+        <div class="cart-box">
+          <!-- Conteúdo do item -->
+        </div>
+      `;    
+      totalCarrinho += total;
+    }
+  });
+
+  let spanTotalCarrinho = document.getElementById("totalCarrinho");
+  spanTotalCarrinho.innerHTML = `Total do Carrinho: R$ ${totalCarrinho.toFixed(2)}`;
+
+}
+
+inicializarLoja();
+
+function atualizarCarrinho(array) {
+  let containerCarrinho = document.getElementById("cart");
+  containerCarrinho.innerHTML = " ";
+  
+  const carrinhoArray = []
+
+  items.map((val) => {
+    if (val.quantidade > 0) {
+      let total = parseFloat(val.price) * val.quantidade;
+
+      carrinhoArray.push(val)
+      localStorage.setItem("carrinho", JSON.stringify(carrinhoArray))
+
+      containerCarrinho.innerHTML += `
+      <div class="cart-box">
+        <tbody>
+            <tr>
+                <td>
+                    <img width="100" src="${val.img}" alt>
+                </td>
+                <td>
+                <h3 class="heading-16">${val.title}</h3>
+                    <div class="mobile-cart-content">
+                        <div class="col">
+                            <div class="qty-box">
+                            <button onclick="decreaseQuantity(${val.id})">
+                        <img src="images/menos.png" alt="-">
+                      </button>
+                                <h2 class="heading-16">${val.quantidade}</h2>
+                                <button onclick="increaseQuantity(${val.id})">
+                        <img src="images/mais.png" alt="+">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <h2 class="heading-16 w-700">R$ ${parseFloat(
+                      val.price
+                    ).toFixed(2)}</h2>
+                </td>
+                <td>
+                    <h2 id="total"class="heading-16 w-700">R$ ${total.toFixed(
+                      2
+                    )}</h2>
+                </td>
+            </tr>
+        </tbody>
+      </div> 
+    `;
+    }
+  });
+  //Valor total do carrinho /////////////////////////////////////////////////////////////
   let totalCarrinho = 0;
   items.map((val) => {
     if (val.quantidade > 0) {
@@ -207,7 +282,8 @@ function esvaziarCarrinho() {
 }
 
 
-//Função para filtrar/////////////////////////////////////////////////////////////////
+//Função para filtrar
+
 const cards = document.getElementsByClassName('card-produto');
 const filterElement = document.getElementById('input-filter');
 
@@ -234,8 +310,7 @@ function filtrar() {
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+// O que falta:
 
-// O que ainda falta:
-
-// Guardar os dados da compra no localStorage;
+// localStorage excluir tudo quando exclui um;
+// localStorage somar o valor total;
