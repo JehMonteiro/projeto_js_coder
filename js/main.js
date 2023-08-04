@@ -57,7 +57,6 @@ const items = [
   },
 ];
 
-
 function inicializarLoja() {
   let containerProdutos = document.getElementById("products");
   items.map((val) => {
@@ -86,18 +85,18 @@ function inicializarLoja() {
     `;
   });
 
-    const carrinho = JSON.parse(localStorage.getItem("carrinho"))
-    let containerCarrinho = document.getElementById("cart");
+  const carrinho = JSON.parse(localStorage.getItem("carrinho"));
+  let containerCarrinho = document.getElementById("cart");
   containerCarrinho.innerHTML = " ";
-  
-  const carrinhoArray = []
+
+  const carrinhoArray = [];
 
   carrinho.map((val) => {
     if (val.quantidade > 0) {
       let total = parseFloat(val.price) * val.quantidade;
 
-      carrinhoArray.push(val)
-      localStorage.setItem("carrinho", JSON.stringify(carrinhoArray))
+      carrinhoArray.push(val);
+      localStorage.setItem("carrinho", JSON.stringify(carrinhoArray));
 
       containerCarrinho.innerHTML += `
       <div class="cart-box">
@@ -137,24 +136,25 @@ function inicializarLoja() {
     `;
     }
   });
-  //Valor total do carrinho 
+  //Valor total do carrinho
   let totalCarrinho = 0;
   items.map((val) => {
     if (val.quantidade > 0) {
       let total = parseFloat(val.price) * val.quantidade;
 
-  containerCarrinho.innerHTML += `
+      containerCarrinho.innerHTML += `
         <div class="cart-box">
           <!-- Conteúdo do item -->
         </div>
-      `;    
+      `;
       totalCarrinho += total;
     }
   });
 
   let spanTotalCarrinho = document.getElementById("totalCarrinho");
-  spanTotalCarrinho.innerHTML = `Total do Carrinho: R$ ${totalCarrinho.toFixed(2)}`;
-
+  spanTotalCarrinho.innerHTML = `Total do Carrinho: R$ ${totalCarrinho.toFixed(
+    2
+  )}`;
 }
 
 inicializarLoja();
@@ -162,15 +162,15 @@ inicializarLoja();
 function atualizarCarrinho(array) {
   let containerCarrinho = document.getElementById("cart");
   containerCarrinho.innerHTML = " ";
-  
-  const carrinhoArray = []
+
+  const carrinhoArray = [];
 
   items.map((val) => {
     if (val.quantidade > 0) {
       let total = parseFloat(val.price) * val.quantidade;
 
-      carrinhoArray.push(val)
-      localStorage.setItem("carrinho", JSON.stringify(carrinhoArray))
+      carrinhoArray.push(val);
+      localStorage.setItem("carrinho", JSON.stringify(carrinhoArray));
 
       containerCarrinho.innerHTML += `
       <div class="cart-box">
@@ -216,17 +216,19 @@ function atualizarCarrinho(array) {
     if (val.quantidade > 0) {
       let total = parseFloat(val.price) * val.quantidade;
 
-  containerCarrinho.innerHTML += `
+      containerCarrinho.innerHTML += `
         <div class="cart-box">
           <!-- Conteúdo do item -->
         </div>
-      `;    
+      `;
       totalCarrinho += total;
     }
   });
 
   let spanTotalCarrinho = document.getElementById("totalCarrinho");
-  spanTotalCarrinho.innerHTML = `Total do Carrinho: R$ ${totalCarrinho.toFixed(2)}`;
+  spanTotalCarrinho.innerHTML = `Total do Carrinho: R$ ${totalCarrinho.toFixed(
+    2
+  )}`;
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -250,8 +252,7 @@ for (let i = 0; i < links.length; i++) {
 
 // Função aumentar e dimunir quantidade de itens no carrinho
 function decreaseQuantity(itemID) {
-  
-  var item = items.find((val) => val.id === itemID); 
+  var item = items.find((val) => val.id === itemID);
 
   if (item) {
     item.quantidade -= 1;
@@ -261,9 +262,8 @@ function decreaseQuantity(itemID) {
 }
 
 function increaseQuantity(itemID) {
-
   var item = items.find((val) => val.id === itemID);
-  
+
   if (item) {
     item.quantidade += 1;
 
@@ -275,42 +275,51 @@ function increaseQuantity(itemID) {
 
 function esvaziarCarrinho() {
   items.forEach((item) => {
-    item.quantidade = 0
+    item.quantidade = 0;
   });
 
   atualizarCarrinho();
 }
 
-
 //Função para filtrar
 
-const cards = document.getElementsByClassName('card-produto');
-const filterElement = document.getElementById('input-filter');
+const cards = document.getElementsByClassName("card-produto");
+const filterElement = document.getElementById("input-filter");
 
-filterElement.addEventListener('input', filtrar);
+filterElement.addEventListener("input", filtrar);
 
 function filtrar() {
   const filterText = filterElement.value.toLowerCase();
-  if (filterText !== '') {
+  if (filterText !== "") {
     for (let card of cards) {
-      const title = card.querySelector('.heading-16');
+      const title = card.querySelector(".heading-16");
       const cardTitle = title.textContent.toLowerCase();
 
       if (!cardTitle.includes(filterText)) {
-        card.style.display = 'none';
+        card.style.display = "none";
       } else {
-        card.style.display = 'block';
+        card.style.display = "block";
       }
     }
   } else {
     for (let card of cards) {
-      card.style.display = 'block';
+      card.style.display = "block";
     }
   }
 }
-
 
 // O que falta:
 
 // localStorage excluir tudo quando exclui um;
 // localStorage somar o valor total;
+
+const btn = document.querySelector('#btnSuccess')
+
+btn.addEventListener("click", () => {
+  Swal.fire({
+    title: "Compra finalizada!",
+    text: "Obrigada pela preferência",
+    icon: "success",
+    confirmButtonText: " OK ",
+  });
+});

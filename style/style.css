@@ -424,7 +424,7 @@ a:hover {
   user-select: none; */
 }
 
-#pop-up {
+/* #pop-up {
   position: fixed;
   top: 40%;
   left: 50%;
@@ -448,6 +448,11 @@ a:hover {
 
 #pop-up h2 {
   margin-bottom: 50px;
+} */
+
+.swal2-title,
+.swal2-html-container {
+  font-family: "Poppins";
 }
 
 /**/
